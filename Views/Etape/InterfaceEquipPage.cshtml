@@ -1,0 +1,63 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model PaginationModel<Etape>
+
+<div class="list_container">
+    <div class="title_content">
+        <p></p>
+        <div class="search_list">
+            <form asp-action="" asp-controller="">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="search ..." name="textRecherche"/>
+            </form>
+        </div>
+    </div>
+    <div class="equipage_style_content">
+        <div class="title">EQUIPE @ViewBag.IdEquipe</div>
+
+            @{
+    var listeClassement = ViewBag.ListEtapes as IEnumerable<IGrouping<string, VEtapeCoureurEquipeDuree>>;
+    if (listeClassement != null && listeClassement.Any())
+    {
+        foreach (var groupe in listeClassement)
+        {
+        <div class="list_etape">
+            <div class="title_etape">
+                <div class="bold"> @groupe.FirstOrDefault()?.Etapes.Nom (@groupe.FirstOrDefault()?.Etapes.Longueur km)</div>
+                <div class="simple"> - @groupe.FirstOrDefault()?.Etapes.NombreCoureurEquipe coureurs par equipe </div>
+            </div>
+            <div class="coureur_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>temps chrono</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in groupe)
+                        {
+                        <tr>
+                            <td>@item.Coureur.Nom</td>
+                            <td>@item.Duree</td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <button class="bouton_affecter"><a asp-action="CoureurListPageEquipe" asp-controller="Coureur" asp-route-id_etape="@groupe.FirstOrDefault()?.IdEtape" >ajouter coureur</a></button>
+        </div>
+                }
+            }
+            else
+            {
+                <p>Aucun classement trouvé pour cette équipe. @listeClassement</p>
+
+            }
+        }
+
+         </div>
+    </div>
+</div>
+<script src="~/js/pagination.js"></script>

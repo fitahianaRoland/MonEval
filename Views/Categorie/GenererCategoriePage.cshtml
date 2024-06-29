@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="list_container">
+    <a asp-action="ListMembresGetAll" asp-controller="Membres" class="bouton_lien">
+        <div class="interne_bouton">
+            <i class='bx bx-chevron-left-circle' style="height: 11px;"></i>
+            <label>retour</label>
+        </div>
+    </a>
+    <div class="title_content">
+        <p>Gener categorie</p>
+    </div>
+</div>
+
+
+<div id="formulaire_content">
+    <div id="item_content">
+        <button><a style="color: #fff;" asp-action="GenererCategorieBase" asp-controller="Categorie">generer</a></button>
+    @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+    {
+        <div><label 
+        style="color: red;font-size: small; text-decoration: underline;">
+        @ViewData["ErrorMessage"]
+        </label>
+        </div>
+    }
+    @if (!string.IsNullOrEmpty(ViewData["SuccesMessage"] as string))
+    {
+        <div><label 
+        style="color: rgb(15, 232, 0);font-size: small; text-decoration: underline;">
+        @ViewData["SuccesMessage"]
+        </label>
+        </div>
+    }
+    </div>
+</div>

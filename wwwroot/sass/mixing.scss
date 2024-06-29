@@ -1,0 +1,60 @@
+@mixin frcc{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+}
+@mixin fricc{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    align-content: center;
+}
+@mixin frsbc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+@mixin frsacc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+@mixin frec{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+@mixin fcsc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: center;
+}  
+@mixin fccc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    align-content: center;
+}  
+@mixin fcccc{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+} 
+@mixin fcsbc{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}

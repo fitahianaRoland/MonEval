@@ -1,0 +1,254 @@
+#login_content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+#item_content {
+  width: 300px;
+  height: auto;
+  font-family: sans-serif;
+  margin-bottom: 100px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+#item_content form {
+  display: flex;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+#item_content .champ {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#item_content .champ p {
+  margin: 1px;
+  font-size: small;
+}
+#item_content .champ span {
+  color: rgb(184, 10, 184);
+  font-size: large;
+}
+#item_content .champ input {
+  padding: 0 0;
+  caret-color: rgb(249, 100, 246);
+  padding-left: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.221);
+  border-radius: 5px;
+  width: 290px;
+  height: 30px;
+}
+#item_content .champ input:focus {
+  outline: none;
+  box-shadow: 0px 0px 1px 2px rgba(159, 30, 181, 0.769);
+}
+#item_content .champ input[type=date] {
+  color: rgba(0, 0, 0, 0.483);
+  font-family: sans-serif;
+}
+#item_content .champ input[type=date]:hover {
+  cursor: pointer;
+}
+#item_content .champ select {
+  width: 300px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgba(0, 0, 0, 0.2156862745);
+  border-radius: 5px;
+  padding-left: 10px;
+}
+#item_content .champ select:focus {
+  outline: none;
+  box-shadow: 0px 0px 1px 2px rgba(159, 30, 181, 0.769);
+}
+#item_content .champ .file-input-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+#item_content .champ .file-input-wrapper input[type=file] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  height: 50px;
+  cursor: pointer;
+}
+#item_content .champ .file-input-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+#item_content .champ .radioContainerMother {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-left: 5px;
+  width: 750px;
+}
+#item_content .champ .radioContainer {
+  width: 100px;
+  height: 200px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-left: 5px;
+  width: auto;
+  margin-bottom: 15px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  padding-top: 5px;
+  transition: all 0.2s ease;
+}
+#item_content .champ .radioContainer .custom-radio {
+  display: inline-block;
+  position: relative;
+  padding-left: 30px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+#item_content .champ .radioContainer .custom-radio input:checked ~ .radioContainer {
+  background-color: #2196f3;
+}
+#item_content .champ .radioContainer .radioContainer:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+#item_content .champ .radioContainer .custom-radio input:checked ~ .radioContainer:after {
+  display: block;
+}
+#item_content .champ .radioContainer .custom-radio .custom-radio .checkmark:after {
+  top: 7px;
+  left: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+}
+#item_content .champ .radioContainer :after {
+  top: 7px;
+  left: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: white;
+}
+#item_content .champ .radioContainer label {
+  width: 40%;
+}
+#item_content .champ .radioContainer .radio {
+  width: 20px;
+  height: 15px;
+}
+#item_content .champ .radioContainer .prix {
+  font-size: xx-large;
+  text-align: center;
+  margin-top: 6px;
+}
+#item_content .champ .radioContainer .prixTotal {
+  font-size: large;
+  text-align: left;
+  margin-left: 2px;
+}
+#item_content .champ .radioContainer .devisDetails {
+  text-align: center;
+}
+#item_content .champ .radioContainer .devisDetails p {
+  font-size: x-small;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.695);
+}
+#item_content .champ .radioContainer .jours {
+  margin: 8px 28px;
+  color: rgba(6, 84, 0, 0.659);
+}
+#item_content .champ .radioContainer:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+#item_content .remember_forgot {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+#item_content .remember_forgot .remember_me {
+  width: 115px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+}
+#item_content .remember_forgot .remember_me p {
+  font-size: small;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.755);
+}
+#item_content .remember_forgot p {
+  width: 115px;
+  font-size: small;
+  font-weight: bold;
+  color: rgba(67, 3, 67, 0.907);
+  cursor: pointer;
+}
+#item_content button {
+  margin-top: 10px;
+  width: 300px;
+  height: 50px;
+  border: none;
+  background-color: rgb(106, 0, 167);
+  border-radius: 3px;
+  color: #fff;
+  transition: 0.2s;
+}
+#item_content button:hover {
+  cursor: pointer;
+  background-color: rgb(147, 10, 227);
+}
+#item_content .not_registered {
+  font-size: small;
+}
+#item_content .not_registered p .create_account {
+  color: rgb(106, 0, 167);
+  cursor: pointer;
+}
+
+.login_image {
+  width: 200px;
+  height: 80px;
+}
+
+@media (max-width: 1050px) {
+  #item_content .champ .radioContainerMother {
+    grid-template-columns: repeat(2, 1fr);
+    width: 550px;
+  }
+}
+@media (max-width: 600px) {
+  #item_content .champ .radioContainerMother {
+    grid-template-columns: 1fr;
+    width: 350px;
+  }
+}/*# sourceMappingURL=login.css.map */

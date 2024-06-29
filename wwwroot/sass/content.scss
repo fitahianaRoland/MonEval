@@ -1,0 +1,25 @@
+@import './header.scss';
+@import './sidebar.scss';
+@import './menulist.scss';
+
+.content {
+  background-color: rgba(255, 232, 250, 0.869);
+  height: auto;
+  padding-top: $header_height;
+  padding-left: $width_sidebar + 20px;
+  // height: 100vh; 
+    // z-index: -10;
+  }
+
+  @media (max-width: $responsive3){
+    .content {
+      padding-left: 0;
+    }
+  }
+// .conteneur {
+//     background-color: rgb(255, 220, 249);
+//     height: 1250px;
+//     position: relative;
+//     z-index: -1;
+//     width: 100%;
+//   }

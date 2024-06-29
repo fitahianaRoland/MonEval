@@ -1,0 +1,74 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="list_container">
+    <div class="title_content">
+        <p>Dashboard</p>
+    </div>
+</div>
+
+<div id="Dashboard_container">
+    <div class="montant_total">
+        <p class="title">montant total devis</p>
+        <div class="big_number">
+            <p>@ViewBag.TotalDevis AR</p>
+        </div>
+    </div>
+
+    <div class="montant_total">
+        <p class="title">montant total devis</p>
+        <div class="big_number">
+            <p>@ViewBag.TotalDevis AR</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="list_container">
+    <a asp-action="" asp-controller="" class="bouton_lien">
+        <div class="interne_bouton">
+            <i class='bx bx-chevron-left-circle' style="height: 11px;"></i>
+            <label>retour</label>
+        </div>
+    </a>
+    <div class="title_content">
+        <p>graphique js</p>
+    </div>
+</div>
+<div style="width: 250px;">
+    <canvas id="monGraphique" ></canvas>
+</div>
+
+<script src="~/js/chart.js"></script>
+<script>
+    // Données du graphique (vous pouvez les remplacer par vos propres données)
+    var donnees = {
+        labels: ["Femme", "Homme"],
+        datasets: [{
+            label: 'Statistique',
+            backgroundColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)'],
+            borderColor: ['rgba(255, 99, 132, 0.5)', 'rgba(54, 162, 235, 0.5)'],
+            borderWidth: 1,
+            data: [10, 30] // Correction : tableau de données fermé correctement
+        }]
+    };
+
+    // Récupérer le contexte du canevas
+    var ctx = document.getElementById('monGraphique').getContext('2d');
+
+    // Créer le graphique à barres
+    var monGraphique = new Chart(ctx, {
+        type: 'bar',
+        data: donnees,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

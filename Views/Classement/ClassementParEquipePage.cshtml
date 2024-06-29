@@ -1,0 +1,44 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model PaginationModel<Classement_general_view>
+
+<div class="list_container">
+    <div class="title_content">
+    <button class="bouton_pgf"><a asp-action="GeneratePdf" asp-controller="Pdf" >GeneratePdf</a></button>
+        <p>Liste des classsements</p>
+        <div class="search_list">
+            <form asp-action="" asp-controller="">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="search ..." name="textRecherche"/>
+            </form>
+        </div>
+    </div>
+    <div class="tableau">
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>point : </th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                @foreach (var classement in Model.ListObjets){
+                    <tr> 
+                        <td><a asp-action="ClassementParCategoriePageById" asp-controller="Classement"  asp-route-id="@classement.IdEquipe">@classement.Equipe</a></td>
+                        <td>@classement.Point</td>
+                        @* <td><a asp-action="ClassementParCategoriePageById" asp-controller="Classement"  asp-route-id="@classement.IdEquipe"><i class='bx bxs-right-arrow-circle bx-tada bx-flip-horizontal' style='color:#3b0446; font-size: large;' ></i></a></td> *@
+                        <td></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="pagination">
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <a href="@Url.Action("ClassementParEquipePage", "Classement", new { page = i })" class="@(i == Model.CurrentPage ? "active" : "")"><span>@i</span></a>
+        }
+    </div>
+</div>
+@* <script src="~/js/pagination.js"></script> *@

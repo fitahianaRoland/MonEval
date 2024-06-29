@@ -1,0 +1,138 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model PaginationModel<Classement_general_view>
+
+<div class="list_container">
+    <div class="title_content">
+        <p>Liste des classsements</p>
+        <div class="search_list">
+            <form asp-action="" asp-controller="">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="search ..." name="textRecherche"/>
+            </form>
+        </div>
+    </div>
+    <div class="filter_content">
+        <div class="filter">
+            <form asp-action="ClassementParCategorieResultBase" asp-controller="Classement">
+                <select name="idCategorie" id="categorie">
+                    @foreach(var categorie in ViewBag.listCategorie){
+                    <option value="@categorie.Id">@categorie.Nom</option>
+                    }
+                </select>
+                <button type="submit" class="bouton_filter">filter</button>
+            </form>
+        </div>
+    </div>
+    <div class="tableau">
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Equipe</th>
+                        <th>point : </th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    @foreach (var classement in Model.ListObjets){
+                        <tr>
+                            <td>@classement.IdEquipe</td>
+                            <td>@classement.Point</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div style="width: 250px;">
+            <canvas id="monGraphique"></canvas>
+        </div>
+    </div>
+    <div class="pagination" id="pagination">
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <a href="@Url.Action("ClassementParCategoriePage", "Classement", new { page = i })" class="@(i == Model.CurrentPage ? "active" : "")"><span>@i</span></a>
+        }
+    </div>
+</div>
+@* <script src="~/js/pagination.js"></script> *@
+    
+<script src="~/js/chart.js"></script>
+    <script>
+        // Données du graphique générées dynamiquement avec Razor
+        var labels = [];
+        var dataPoints = [];
+        var backgroundColors = [];
+        var borderColors = [];
+
+        // Tableau de couleurs prédéfinies
+        var colorPalette = [
+            'rgba(255, 99, 132, 0.5)',
+            'rgba(54, 162, 235, 0.5)',
+            'rgba(75, 192, 192, 0.5)',
+            'rgba(255, 206, 86, 0.5)',
+            'rgba(153, 102, 255, 0.5)',
+            'rgba(255, 159, 64, 0.5)',
+            'rgba(201, 203, 207, 0.5)',
+            'rgba(255, 99, 71, 0.5)',
+            'rgba(123, 104, 238, 0.5)',
+            'rgba(60, 179, 113, 0.5)'
+        ];
+
+        // Tableau de couleurs des bordures
+        var borderColorPalette = [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(201, 203, 207, 1)',
+            'rgba(255, 99, 71, 1)',
+            'rgba(123, 104, 238, 1)',
+            'rgba(60, 179, 113, 1)'
+        ];
+
+        @foreach (var classement in Model.ListObjets) {
+            <text>
+                labels.push("@classement.IdEquipe");
+                dataPoints.push(@classement.Point);
+                var colorIndex = labels.length - 1;
+                backgroundColors.push(colorPalette[colorIndex % colorPalette.length]);
+                borderColors.push(borderColorPalette[colorIndex % borderColorPalette.length]);
+            </text>;
+        }
+
+        var donnees = {
+            labels: labels,
+            datasets: [{
+                label: 'Points par équipe',
+                backgroundColor: backgroundColors,
+                borderColor: borderColors,
+                borderWidth: 1,
+                data: dataPoints
+            }]
+        };
+
+        // Récupérer le contexte du canevas
+        var ctx = document.getElementById('monGraphique').getContext('2d');
+
+        // Créer le graphique camembert
+        var monGraphique = new Chart(ctx, {
+            type: 'pie',
+            data: donnees,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Points par équipe'
+                    }
+                }
+            }
+        });
+    </script>

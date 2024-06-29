@@ -14,17 +14,23 @@ public class ClassementController : Controller
     private readonly ClassementGeneralCategorieViewRepository _classementGeneralCategorieViewRepository;
     public readonly CategorieRepository _categorieRepository;
     private readonly GetPaginationModelService _getPaginationModelService;
+    private readonly ClassementGeneralCoefficientEtapeRangRepository _classementGeneralCoefficientEtapeRangRepository;
+    private readonly ClassementGeneralCoefficientEtapeRepository _classementGeneralCoefficientEtapeRepository;
     public ClassementController(ClassementGeneralViewRepository classementGeneralViewRepository,  
     GetPaginationModelService getPaginationModelService ,
     CategorieRepository categorieRepository,
     ClassementGeneralCategorieViewRepository classementGeneralCategorieViewRepository,
-    EtapeRepository etapeRepository
+    EtapeRepository etapeRepository,
+    ClassementGeneralCoefficientEtapeRangRepository classementGeneralCoefficientEtapeRangRepository,
+    ClassementGeneralCoefficientEtapeRepository classementGeneralCoefficientEtapeRepository
     ){
         _classementGeneralViewRepository = classementGeneralViewRepository;
         _getPaginationModelService = getPaginationModelService;
         _categorieRepository = categorieRepository;
         _classementGeneralCategorieViewRepository = classementGeneralCategorieViewRepository;
         _etapeRepository = etapeRepository;
+        _classementGeneralCoefficientEtapeRangRepository = classementGeneralCoefficientEtapeRangRepository;
+        _classementGeneralCoefficientEtapeRepository = classementGeneralCoefficientEtapeRepository;
     }
     public IActionResult ClassementGeneralePage(int page = 1){
         var model = _getPaginationModelService.ListShow(page, _classementGeneralViewRepository.GetClassementGeneral());
@@ -63,14 +69,19 @@ public class ClassementController : Controller
     // ----------------------------- etape list
     
     public IActionResult ListEtapePage(){
-        ViewBag.listEtape = _etapeRepository.FindAll();
+        ViewBag.listEtape = _classementGeneralCoefficientEtapeRepository.GetPointsParEtape();
         return View();
     }
     
     public IActionResult ClassementParEtapeCoureur(string id){
         Console.WriteLine(" idEtape :" + id);
-        ViewBag.listEtapeCoureur = _classementGeneralViewRepository.FindAllByIdEtape(id);
+        ViewBag.listEtapeCoureur = _classementGeneralCoefficientEtapeRangRepository.FindAllByIdEtape(id);
         // ViewBag.maxPoints = _classementGeneralViewRepository.FindAllByIdEtape(id).Max(liste => liste.Point);
         return View("ClassementParEtapeCoureur");
     }
+
+
+
+
+    
 }

@@ -1,0 +1,56 @@
+.htmlPopop{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.394);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content:center;
+}
+.closeButton{
+    color: rgb(206, 8, 255);
+    float: right;
+    margin-top: -20px;
+    margin-right: -20px;
+}
+.container_popop{
+    padding-left: 10px;
+    border-radius: 10px;
+    width: 500px;
+    height: auto;
+    /* margin-top: 50px; */
+    padding-bottom: 50px;
+    background-color: rgb(43, 43, 43);
+}
+.container_popop form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    align-content: center;
+    gap: 20px;
+}
+.container_popop form input{
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid purple;
+    color: white;
+    outline: none;
+}
+.container_popop form button{
+    padding: 10px 30px;
+    background-color: rgb(169, 5, 169);
+    border: none;
+    color:rgba(255, 255, 255, 0.866);
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.closeButton,.container_popop form button:hover{
+    cursor: pointer;
+}

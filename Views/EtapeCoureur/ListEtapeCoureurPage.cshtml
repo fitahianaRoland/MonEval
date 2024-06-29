@@ -1,0 +1,65 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model PaginationModel<EtapeCoureur>
+
+<div class="list_container">
+    <div class="title_content">
+        <p>Liste des coureurs dans l'equipe</p>
+        <div class="search_list">
+            <form asp-action="" asp-controller="">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="search ..." name="textRecherche"/>
+            </form>
+        </div>
+    </div>
+    <a asp-action="ListEtapePageAdmin" asp-controller="Etape" class="bouton_lien">
+        <div class="interne_bouton">
+            <i class='bx bx-chevron-left-circle' style="height: 11px;"></i>
+            <label>retour</label>
+        </div>
+    </a>
+    <form asp-action="InsertionTempsCoureur" asp-controller="TempsCoureur">
+        <div class="tableau">
+            <table>
+                <thead>
+                    <tr>
+                        <th>nom</th>
+                        <th>numero</th>
+                        <th>debut</th>
+                        <th>fin</th>
+                        <th>ajouter heure</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    @foreach (var tempsCoureur in ViewBag.listTempsCoureur){
+                        <tr>
+                            <td>@tempsCoureur.Id</td>
+                            <td>@tempsCoureur.IdCoureur</td>
+                            <td>@tempsCoureur.HeureDepart.ToString("HH:mm:ss")</td>
+                            <td>@tempsCoureur.HeureArrive.ToString("HH:mm:ss")</td>
+                            <td><i class='bx bxs-check-circle' style='color:#005900'  ></i></td>
+                        </tr>
+                    }
+                    @foreach (var etapeCoureur in ViewBag.listCoureurNotInTempsCoureur){
+                        <tr>
+                            <td>@etapeCoureur.Id</td>
+                            <td>@etapeCoureur.IdCoureur</td>
+                            <th></th>
+                            <th></th>
+                            <td><a asp-action="AjoutTempsCoureur" asp-controller="TempsCoureur" asp-route-id="@etapeCoureur.IdCoureur" ><i class='bx bxs-right-arrow-circle bx-tada bx-flip-horizontal' style='color:#3b0446; font-size: large;' ></i></a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <button id="affecter" type="submit"> Valider  </button>
+    </form>
+    <div id="checkValidation"></div>
+    <div class="pagination" id="pagination">
+    </div>
+</div>
+@Html.AntiForgeryToken()
+@* <script src="~/js/pagination.js"></script> *@
+<script src="~/js/coureursTraitement.js"></script>

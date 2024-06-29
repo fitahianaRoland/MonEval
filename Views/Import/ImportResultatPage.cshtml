@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="list_container">
+    <a asp-action="ListMembresGetAll" asp-controller="Membres" class="bouton_lien">
+        <div class="interne_bouton">
+            <i class='bx bx-chevron-left-circle' style="height: 11px;"></i>
+            <label>retour</label>
+        </div>
+    </a>
+    <div class="title_content">
+        <p>Import Resultats</p>
+    </div>
+</div>
+
+
+<div id="formulaire_content">
+        <div id="item_content">
+            <form asp-action="ImportResultatBase" asp-controller="Import" enctype="multipart/form-data">
+                <div class="champ">
+                    <p>Choose your file<span>*</span></p>
+                    <div class="file-input-wrapper">
+                        <button class="file-input-button" type="button">Choose File</button>
+                        <input type="file" name="file" >
+                    </div>
+                </div>
+                @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+                    {
+                        <div><label 
+                        style="color: red;font-size: small; text-decoration: underline;">
+                        @ViewData["ErrorMessage"]
+                        </label>
+                        </div>
+                    }
+                @if (!string.IsNullOrEmpty(ViewData["SuccesMessage"] as string))
+                    {
+                        <div><label 
+                        style="color: rgb(15, 232, 0);font-size: small; text-decoration: underline;">
+                        @ViewData["SuccesMessage"]
+                        </label>
+                        </div>
+                    }
+                <button type="submit">Import</button>
+            </form>
+            @* <div class="not_registered">
+                <p><span>Have an account yet?</span><span class="create_account"><a href="@Url.Action("LoginPage", "Login")" style="text-decoration:none;"> login?</a></span></p>
+            </div> *@
+        </div>
+    </div>

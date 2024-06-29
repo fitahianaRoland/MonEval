@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="list_container">
+    <div class="title_content">
+        <p>Liste des etapes</p>
+        <div class="search_list">
+            <form asp-action="" asp-controller="">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="search ..." name="textRecherche"/>
+            </form>
+        </div>
+    </div>
+    <div class="tableau">
+        <table>
+            <thead>
+                <tr>
+                    <th>nom</th>
+                    <th>longeur </th>
+                    <th>Coefficient </th>
+                    <th>points </th>
+                    <th>voir </th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                @foreach (var classement in ViewBag.ListEtape){
+                    <tr>
+                        <td>@classement.Etape</td>
+                        <td>@classement.Longueur</td>
+                        <td>@classement.Coefficient</td>
+                        <td>@classement.Point</td>
+                        <td><a asp-action="ClassementParEtapeCoureur" asp-controller="Classement" asp-route-id="@classement.IdEtape" style="color: rgb(17, 150, 57);">resultat</a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+@* <script src="~/js/pagination.js"></script> *@

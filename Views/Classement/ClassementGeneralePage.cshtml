@@ -1,0 +1,43 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model PaginationModel<Classement_general_view>
+
+<div class="list_container">
+    <div class="title_content">
+        <p>Liste des classsements</p>
+        <div class="search_list">
+            <form asp-action="" asp-controller="">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="search ..." name="textRecherche"/>
+            </form>
+        </div>
+    </div>
+    <div class="tableau">
+        <table>
+            <thead>
+                <tr>
+                    @* <th>Id</th> *@
+                    <th>nom</th>
+                    <th>point : </th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                @foreach (var classement in Model.ListObjets){
+                    <tr>
+                        @* <td>@classement.IdCoureur</td> *@
+                        <td>@classement.Coureur</td>
+                        <td>@classement.Point</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <div class="pagination" id="pagination">
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <a href="@Url.Action("ClassementGeneralePage", "Classement", new { page = i })" class="@(i == Model.CurrentPage ? "active" : "")"><span>@i</span></a>
+        }
+    </div>
+</div>
+@* <script src="~/js/pagination.js"></script> *@

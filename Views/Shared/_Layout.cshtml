@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - dotnetEval</title>
+    <link href='~/boxicons-2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="~/sass/style.css">
+    <link rel="stylesheet" href="~/sass/list.css">
+    <link rel="stylesheet" href="~/sass/header.css">
+    <link rel="stylesheet" href="~/sass/content.css">
+    <link rel="stylesheet" href="~/sass/sidebar.css">
+    <link rel="stylesheet" href="~/sass/conteneur.css">
+    <link rel="stylesheet" href="~/sass/login.css">
+    <link rel="stylesheet" href="~/sass/menulist.css">
+    <link rel="stylesheet" href="../sass/formulaire.css">
+    <link rel="stylesheet" href="../sass/styleComponent.css">
+    <link rel="stylesheet" href="../sass/popop.css">
+    <link rel="stylesheet" href="../sass/dashboard.css">
+    <link rel="stylesheet" href="../leaflet/leaflet.css"/>
+    <script src="../leaflet/leaflet.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header">
+            <div id="start">
+                <i class='bx bx-menu burger_menu'></i>
+                <a href="index.html"><img class="logoEval" src="../img/logoEval.png" alt="x" /></a>
+            </div>
+            <div id="center">
+                <form action="">
+                    <div class="search_container">
+                        <input type="text" placeholder="recherche" />
+                    </div>
+                    <button type="submit" aria-label="recherche"><i class='bx bx-search search_button'></i></button>
+                </form>
+            </div>
+            <ul id="end">
+                <li>
+                    <a href="index.html"><i class='bx bx-bell icon_notification'></i></a>
+                </li>
+                <li>
+                    <i class='bx bx-user-circle icon_user' ></i>
+                    <ul class="user_menu_sous_nav">
+                        <a asp-action="ListTravauxPage" asp-controller="Travaux"><li>categorie</li></a>
+                        <a asp-action="ListTypeFinitionPage" asp-controller="TypeFinition"><li>ListeFinitions</li></a>
+                        <a asp-action="Deconnexion" asp-controller="Login"><li>Deconnexion</li></a>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div class="content">
+        <div class="background_sidebar">
+            <div class="sidebar" isHidden="false">
+                <ul>
+                    <li>
+                        <div class="item">
+                            <i class='bx bxs-component'></i>
+                            <p>Classement</p>
+                            <i class='bx bxs-chevron-down chevron_down' ></i>
+                        </div>
+                        <div class="sub_item">
+                            @* <a asp-action="ClassementGeneralePage" asp-controller="Classement">
+                            <div id="item-ex">
+                                <i class='bx bxs-star'></i>
+                                <p>generale</p>
+                            </div>
+                            </a> *@
+                            <a asp-action="ClassementParEquipePage" asp-controller="Classement">
+                            <div id="item-ex">
+                                <i class='bx bxs-star'></i>
+                                <p>par equipe</p>
+                            </div>
+                            </a>
+                            <a asp-action="ClassementParEtapePage" asp-controller="Classement">
+                            <div id="item-ex">
+                                <i class='bx bxs-star'></i>
+                                <p>pts sur etape</p>
+                            </div>
+                            </a>
+                            <a asp-action="ClassementParCategoriePage" asp-controller="Classement">
+                                <div id="item-ex">
+                                    <i class='bx bxs-star'></i>
+                                    <p>par categorie</p>
+                                </div>
+                            </a>
+                            <a asp-action="ListEtapePage" asp-controller="Classement">
+                                <div id="item-ex">
+                                    <i class='bx bxs-star'></i>
+                                    <p>par etape categorie</p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <i class='bx bx-select-multiple' ></i>
+                            <p>Admin</p>
+                            <i class='bx bxs-chevron-down chevron_down' ></i>
+                        </div>
+                        <div class="sub_item">
+                            <a asp-action="ListEtapePageAdmin" asp-controller="Etape">
+                            <div id="item-ex">
+                                <i class='bx bxs-star'></i>
+                                <p>List des etapes admin</p>
+                            </div>
+                            </a>
+                            @* <a asp-action="ListEtapePageEquipe" asp-controller="Etape">
+                            <div id="item-ex">
+                                <i class='bx bxs-star'></i>
+                                <p>List etapes equipe</p>
+                            </div>
+                            </a> *@
+                            <a asp-action="ListPenalitePage" asp-controller="Penalite">
+                            <div id="item-ex">
+                                <i class='bx bxs-star'></i>
+                                <p>ajouter penalite</p>
+                            </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item">
+                            <i class='bx bx-select-multiple' ></i>
+                            <p>Import</p>
+                            <i class='bx bxs-chevron-down chevron_down' ></i>
+                        </div>
+                        <div class="sub_item">
+                            <a asp-action="ImportPointsPage" asp-controller="Import">
+                            <div id="item-ex">
+                                <i class='bx bxs-star'></i>
+                                <p>points</p>
+                            </div>
+                            </a>
+                            @* <a asp-action="ImportEtapePage" asp-controller="Import">
+                                <div id="item-ex">
+                                    <i class='bx bxs-star'></i>
+                                    <p>etapes</p>
+                                </div>
+                            </a>
+                            <a asp-action="ImportResultatPage" asp-controller="Import">
+                                <div id="item-ex">
+                                    <i class='bx bxs-star'></i>
+                                    <p>resultats</p>
+                                </div>
+                            </a> *@
+                            <a asp-action="ImportDonnesPage" asp-controller="Import">
+                                <div id="item-ex">
+                                    <i class='bx bxs-star'></i>
+                                    <p>Donnes</p>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li>
+                    <a asp-action="ReinitialiserBasePage" asp-controller="Reinitialiser">
+                        <div class="item">
+                            <i class='bx bx-video-recording icone_sidebar' ></i>
+                            <p>reinitialiser base</p>
+                            <i class='bx bxs-chevron-down chevron_down' style="color: transparent;"></i>
+                        </div>
+                        </a>
+                    </li>
+                    <li>
+                    <a asp-action="GenererCategoriePage" asp-controller="Categorie">
+                        <div class="item">
+                            <i class='bx bx-video-recording icone_sidebar' ></i>
+                            <p>Générer catégorie</p>
+                            <i class='bx bxs-chevron-down chevron_down' style="color: transparent;"></i>
+                        </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="conteneur">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+    <!-- <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - dotnetEval - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer> -->
+    <!-- <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script> -->
+    <script src="~/js/slideBar.js"></script>
+    <script src="~/js/paginationMenu.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

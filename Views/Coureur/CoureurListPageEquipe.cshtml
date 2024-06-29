@@ -1,0 +1,58 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model PaginationModel<Coureur>
+
+<div class="list_container">
+    <div class="title_content">
+        <p>Liste des coureurs dans l'equipe</p>
+        <div class="search_list">
+            <form asp-action="" asp-controller="">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="search ..." name="textRecherche"/>
+            </form>
+        </div>
+    </div>
+    <a asp-action="ListEtapePageEquipe" asp-controller="Etape" class="bouton_lien">
+        <div class="interne_bouton">
+            <i class='bx bx-chevron-left-circle' style="height: 11px;"></i>
+            <label>retour</label>
+        </div>
+    </a>
+    <form id="coureursTraitement" method="post">
+        @Html.AntiForgeryToken()
+        <div class="tableau">
+            <table>
+                <thead>
+                    <tr>
+                        <th>nom</th>
+                        <th>numero</th>
+                        <th>date de naissance</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    @foreach (var coureur in Model.ListObjets){
+                        <tr>
+                            <td>@coureur.Nom</td>
+                            <td>@coureur.NumeroDossard</td>
+                            <td>@coureur.DateDeNaissance</td>
+                            <td><input type="checkbox" name="id_coureur" value="@coureur.Id"></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <button id="affecter" type="submit"> AFFECTER  </button>
+    </form>
+    <div id="checkValidation"></div>
+    <div class="pagination" id="pagination">
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <a href="@Url.Action("CoureurListPageEquipe", "Coureur", new { page = i })" class="@(i == Model.CurrentPage ? "active" : "")"><span>@i</span></a>
+        }
+    </div>
+</div>
+@Html.AntiForgeryToken()
+@* <script src="~/js/pagination.js"></script> *@
+<script src="~/js/coureursTraitement.js"></script>

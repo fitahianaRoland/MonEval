@@ -1,0 +1,51 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="list_container">
+    <a asp-action="" asp-controller="" class="bouton_lien">
+        <div class="interne_bouton">
+            <i class='bx bx-chevron-left-circle' style="height: 11px;"></i>
+            <label>retour</label>
+        </div>
+    </a>
+    <div class="title_content">
+        <p>Ajouter penalite</p>
+    </div>
+</div>
+
+
+<div id="formulaire_content">
+        <div id="item_content">
+            <form asp-action="AddPenaliteBase" asp-controller="Penalite">
+                <div class="champ">
+                    <p>etapes<span>*</span></p>
+                    <select name="idEtape" id="">
+                        @foreach(var etapes in ViewBag.listEtapes ){
+                        <option value="@etapes.Id">@etapes.Nom</option>
+                        }
+                    </select>
+                </div>
+                <div class="champ">
+                    <p>equipes<span>*</span></p>
+                    <select name="idEquipe" id="">
+                        @foreach(var equipes in ViewBag.listEquipes ){
+                        <option value="@equipes.Id">@equipes.Nom</option>
+                        }
+                    </select>
+                </div>
+                <div class="champ">
+                    <p>heure penalite<span>*</span></p>
+                    <input type="time" name="time" required>
+                </div>
+                @if (!string.IsNullOrEmpty(ViewData["ErrorMessage"] as string))
+                    {
+                        <div><label 
+                        style="color: red;font-size: small; text-decoration: underline;">
+                        @ViewData["ErrorMessage"]
+                        </label>
+                        </div>
+                    }
+                <button type="submit">Add</button>
+            </form>
+        </div>
+    </div>

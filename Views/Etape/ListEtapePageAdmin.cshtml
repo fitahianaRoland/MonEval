@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model PaginationModel<Etape>
+
+<div class="list_container">
+    <div class="title_content">
+        <p>Liste des Etapes</p>
+        <div class="search_list">
+            <form asp-action="" asp-controller="">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="search ..." name="textRecherche"/>
+            </form>
+        </div>
+    </div>
+    <div class="add_element">
+        <a asp-action="" asp-controller="">
+            <p>add</p>
+            <i class='bx bx-plus-medical'></i>
+        </a>
+    </div>
+    <div class="tableau">
+        <table>
+            <thead>
+                <tr>
+                    <th>nom</th>
+                    <th>rang</th>
+                    <th>details : </th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                @foreach (var etape in ViewBag.listEtapes){
+                    <tr>
+                        <td>@etape.Nom</td>
+                        <td>@etape.RangEtape</td>
+                        <td><a asp-action="ListEtapeCoureurPageAdmin" asp-controller="EtapeCoureur"  asp-route-id="@etape.Id"><i class='bx bxs-right-arrow-circle bx-tada bx-flip-horizontal' style='color:#3b0446; font-size: large;' ></i></a></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    @* <div class="pagination" id="pagination">
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <a href="@Url.Action("ListEtapePage", "Etape", new { page = i })" class="@(i == Model.CurrentPage ? "active" : "")"><span>@i</span></a>
+        }
+    </div> *@
+</div>
+<script src="~/js/pagination.js"></script>

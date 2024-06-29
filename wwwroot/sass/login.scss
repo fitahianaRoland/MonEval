@@ -1,0 +1,259 @@
+@import './mixing.scss';
+$width_login: 300px;
+#formulaire_content{
+    // padding-left: 20px;
+}
+
+#login_content{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    left: 0;
+    // background-color: aquamarine;
+    @include fcccc; 
+}
+#item_content{
+    width: $width_login;
+    height: auto;
+    // background-color: rgb(255, 255, 255);
+    font-family: sans-serif;
+    margin-bottom: 100px;   
+    margin-left: 20px;
+    @include fccc;
+    form{
+        // background-color: red;
+        display: flex;
+        width: $width_login;
+        @include fccc;
+    }
+    .champ {
+        width: 100%;
+        margin-bottom: 10px;
+        p{
+            // color: rgb(182, 174, 174);
+            margin: 1px;
+            font-size: small;
+        }
+        span{
+            color: rgb(184, 10, 184);
+            font-size: large;
+        }
+        input{
+            padding: 0 0;
+            caret-color: rgb(249, 100, 246);
+            padding-left: 10px;
+            border: 2px solid rgba(0, 0, 0, 0.221);
+            border-radius: 5px;
+            width: $width_login - 10px;
+            height: 30px;
+            &:focus{
+                outline: none;
+                box-shadow: 0px 0px 1px 2px rgba(159, 30, 181, 0.769);
+            }
+            // outline: black solid;
+        }
+        input[type="date"]{
+            color: rgba(0, 0, 0, 0.483);
+            font-family: sans-serif;
+            &:hover{
+                cursor: pointer;
+            }            
+        }
+
+        select{
+            width: $width_login;
+            height: 30px;
+            margin: 0;
+            padding: 0;
+            border: 2px solid #00000037;
+            border-radius: 5px;
+            padding-left: 10px;
+
+            &:focus{
+                outline: none;
+                box-shadow: 0px 0px 1px 2px rgba(159, 30, 181, 0.769);
+            }
+        }
+
+
+                // input type file css
+        .file-input-wrapper {
+            position: relative;
+            overflow: hidden;
+            display: inline-block;
+        }
+        
+        .file-input-wrapper input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            height: 50px;
+            cursor: pointer;
+        }
+        
+        .file-input-button {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .radioContainerMother{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-left: 5px;
+            width: 750px;
+        }
+
+        .radioContainer{
+            width: 100px;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin-left: 5px;
+            width: auto;
+            margin-bottom: 15px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, .1);
+            padding-top: 5px;
+            transition: all 0.2s ease;
+            .custom-radio {
+                display: inline-block;
+                position: relative;
+                padding-left: 30px;
+                margin-right: 15px;
+                cursor: pointer;
+            }
+            .custom-radio input:checked ~ .radioContainer {
+                background-color: #2196f3;
+            } 
+            .radioContainer:after {
+                content: "";
+                position: absolute;
+                display: none;
+              }
+              
+              .custom-radio input:checked ~ .radioContainer:after {
+                display: block;
+              }
+              .custom-radio .custom-radio .checkmark:after {
+                top: 7px;
+                left: 7px;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: white;
+              }:after {
+                top: 7px;
+                left: 7px;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background: white;
+              }
+            label{
+                width: 40%;
+            }
+            .radio{
+                width: 20px;
+                height: 15px;
+            } 
+            .prix{
+                font-size: xx-large;
+                text-align: center;
+                margin-top: 6px;
+            }
+            .prixTotal{
+                font-size: large;
+                text-align:left;
+
+                margin-left: 2px;
+            }
+            .devisDetails{
+                text-align: center;
+                p{
+                    font-size: x-small;
+                    margin-top: 10px;
+                    color: rgba(0, 0, 0, 0.695);
+                }
+            }
+            .jours{
+                margin: 8px 28px;
+                color: rgba(6, 84, 0, 0.659);
+
+            }
+            &:hover{
+                transform: scale(1.1);
+                box-shadow: 0px 2px 6px rgba(0, 0, 0, .2);
+                cursor: pointer;
+            }
+        }
+    }
+
+
+    .remember_forgot{
+        width: $width_login;
+        @include frsbc;
+        .remember_me{
+            width: 115px;
+            @include frsbc;
+            p{
+            font-size: small;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.755);
+            }
+        }
+        p{
+            width: 115px;
+            font-size: small;
+            font-weight: bold;
+            color: rgba(67, 3, 67, 0.907);
+            cursor: pointer;
+        }
+    }
+    button{
+        margin-top: 10px;
+        width: $width_login;
+        height: 50px;
+        border: none;
+        background-color: rgb(106, 0, 167);
+        border-radius: 3px;
+        color: #fff;
+        transition: 0.2s;
+        &:hover{
+        cursor: pointer;
+        background-color: rgb(147, 10, 227);
+        }
+    }
+
+    .not_registered{
+        font-size: small;
+        p .create_account{
+        color: rgb(106, 0, 167);
+        cursor: pointer;
+        }
+    }
+}
+.login_image{
+    width: 200px;
+    height: 80px;
+}
+
+@media (max-width: 1050px){
+    #item_content .champ .radioContainerMother {
+        grid-template-columns: repeat(2, 1fr);
+        width: 550px;
+    }
+  }
+@media (max-width: 600px){
+    #item_content .champ .radioContainerMother {
+        grid-template-columns: 1fr;
+        width: 350px;
+    }
+  }

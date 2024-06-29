@@ -1,0 +1,52 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="list_container">
+    <div class="title_content">
+        <p>Liste des Travaux</p>
+        <div class="search_list">
+            <form asp-action="RechecheSimple" asp-controller="Membres">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="search ..." name="textRecherche"/>
+            </form>
+        </div>
+    </div>
+    <div class="add_element">
+        <a asp-action="ListTravauxPage" asp-controller="Travaux">
+            <p>add</p>
+            <i class='bx bx-plus-medical'></i>
+        </a>
+    </div>
+    <div class="tableau">
+        <table>
+            <thead>
+                <tr>
+                    <th>code</th>
+                    <th>designation</th>
+                    <th>prix unitaire</th>
+                    <th>modif</th>
+                    @* <th>suppr</th> *@
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                @foreach (var travaux in ViewBag.listTravaux)
+                    {
+                        <tr>
+                            <td>@travaux.CodeTravaux</td>
+                            <td>@travaux.Designation</td>
+                            <td>@travaux.PrixUnitaire</td>
+                            <td><a asp-action="UpdateTravauxPage" asp-controller="Travaux" asp-route-id="@travaux.Id"><i class='bx bx-edit-alt edit_icon'></i></a></td>
+                            @* <td><a asp-action="DeleteTravaux" asp-controller="Travaux" asp-route-id="@travaux.Id"><i class='bx bxs-trash trash_icon'></i></a></td> *@
+                        </tr>
+                    }
+            </tbody>
+        </table>
+    </div>
+    @* <div class="pagination" id="pagination">
+        @for (int i = 1; i <= Model.TotalPages; i++)
+        {
+            <a href="@Url.Action("ListMembresGetAll", "Membres", new { page = i })" class="@(i == Model.CurrentPage ? "active" : "")"><span>@i</span></a>
+        }
+    </div> *@
+</div>
+<script src="~/js/pagination.js"></script>

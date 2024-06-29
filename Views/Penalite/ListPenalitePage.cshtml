@@ -1,0 +1,65 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+@* @model PaginationModel<Etape> *@
+
+<div class="list_container">
+    <div class="title_content">
+        <p></p>
+        <div class="search_list">
+            <form asp-action="" asp-controller="">
+                <i class='bx bx-search'></i>
+                <input type="text" placeholder="search ..." name="textRecherche"/>
+            </form>
+        </div>
+    </div>
+    <div class="equipage_style_content">
+        <button class="bouton_affecter"><a asp-action="AddPenalitePage" asp-controller="Penalite" >ajouter penalite</a></button>
+        <div class="list_etape">
+            <div class="title_etape">
+            <div class="simple"> tous les penalites </div>
+            </div>
+            <div class="coureur_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Etape</th>
+                            <th>Equipe</th>
+                            <th>temps penalites</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var penalite in ViewBag.listPenalite){
+                        <tr>
+                            <td>@penalite.IdEtape</td>
+                            <td>@penalite.IdEquipe</td>
+                            <td>@penalite.TempsPenalite</td>
+                            <td><a href="#" class="delete-penalite" data-id="@penalite.Id"><i class='bx bxs-trash' style='color:#c40909'  ></i></a></td>
+                        </tr>
+                            }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/pagination.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const deleteLinks = document.querySelectorAll('.delete-penalite');
+
+        deleteLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const penaliteId = this.getAttribute('data-id');
+                const userConfirmed = confirm("Voulez-vous vraiment supprimer cette pénalité?");
+
+                if (userConfirmed) {
+                    window.location.href = `/Penalite/DeletePenaliteBase/${penaliteId}`;
+                }
+            });
+        });
+    });
+</script>

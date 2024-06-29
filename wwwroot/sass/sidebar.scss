@@ -1,0 +1,110 @@
+@import  './mixing.scss';
+@import './header.scss';
+@import '../sass/menulist.scss';
+$width_sidebar:230px;
+
+a{
+  text-decoration: none;
+  color:black;
+}
+.background_sidebar.active {
+  //display: none;
+  // position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour l'arrière-plan */
+  z-index: 9999;
+  backdrop-filter: blur(2px); /* Flou de l'arrière-plan */
+  overflow-x: hidden; /* Masque la barre de défilement horizontale */
+}
+.sidebar {
+  margin-top: 5px;
+  width: $width_sidebar;
+  height: 100%;
+  background-color: white;
+  z-index: 50;
+  position: fixed;
+  // position: absolute;
+  font-family: sans-serif;
+  padding:0 5px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, .1);
+  // transition: 0.2s all;
+  left: 0;
+  // overflow-y: auto;
+}
+.sidebar{
+  // padding: 1px 1px;
+  ul{
+    height: auto;
+    padding: 0 0;
+    list-style-type: none;
+    @include fcsc;
+  }
+  li{
+    text-decoration: none;
+    padding: 5px 0;
+  }
+  .item{
+    cursor: pointer;
+    width:$width_sidebar;
+    height: 40px;
+    @include frsacc;
+    transition: 0.2s;
+    &:hover{
+      background-color: $themeviolet_color;
+      color: #ffffff;
+      border-radius: 5px;
+      .chevron_down{
+        color: #fff;
+      }
+    }
+  }
+  .item.active{
+    background-color: $themeviolet_color;
+    color: #fff;
+    border-radius: 5px;
+  }
+  .icone_sidebar{
+    // padding-left: 25px;
+    font-size: medium;
+  }
+  p{
+    flex-basis: 160px;
+    padding-left: 10px;
+  }
+  .chevron_down{
+    font-size: medium;
+    color: rgba(0, 0, 0, 0.465);
+  }
+
+  .sub_item{
+    display: none;
+  }
+
+  .sub_item.active{
+    display: block;
+    background-color: rgba(0, 0, 0, 0.035);
+    #item-ex{
+      cursor: pointer;
+      width:$width_sidebar;
+      height: 40px;
+      @include frsacc;
+      transition: 0.2s all;
+      &:hover{
+        background-color: transparent;
+        i{
+          color: $themeviolet_color;
+        }
+      }
+      i{
+        color: rgba(0, 0, 0, 0.323);
+      }
+  }
+  }
+}
+
+@media (max-width: $responsive3){
+  .sidebar {
+    left: -300px;
+  }
+}

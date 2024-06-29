@@ -1,0 +1,126 @@
+@import './mixing.scss';
+$responsive1:1210px;
+$responsive2:1000px;
+$responsive3:790px;
+$responsive4:550px;
+
+
+#menuContainer{
+    padding: 10px 0;
+    padding-left: 10px;
+    top: 0;
+    left: 0;
+    // width: 100%;
+    height: auto;
+    // background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+
+    .menuPage{
+        color: rgba(0, 0, 0, 0.678);
+        .title{
+            font-size: larger;
+            color: rgb(99, 6, 106);
+            font-family: fantasy;
+        }
+    }
+
+    .liste{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        align-items: center;
+        justify-content: center; /* Center horizontally */
+        place-items: center; /* Center vertically */
+    }
+
+    .item{
+        background-color: rgb(255, 255, 255);
+        width: 245px;
+        height: 370px;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, .1);
+        transition: 0.2s all ease;
+        &:hover{
+            transform: scale(1.01);
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, .5);
+        }
+    }
+
+    .imageContainer{
+        width: 100%;
+        height: 200px;
+        background-color: beige;
+        .imageMenu{
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    }
+    .title_subtitle{
+        @include fcccc;
+        height: 80px;
+        text-align: center;
+        .title{
+            font-family: sans-serif;
+        }
+        .ingredient{
+            font-family: sans-serif;
+            font-size: small;
+            color: rgba(0, 0, 0, 0.535);
+        }
+    }
+
+    .priceValide{
+        .price{
+            // background-color: rgba(0, 0, 0, 0.035);
+            border-bottom: solid 2px rgba(0, 0, 0, 0.217);
+            margin: 0 5px;
+            height: 30px;
+            @include frsbc;
+        }
+        p{
+            font-family: sans-serif;
+            font-size: small;
+        }
+        .heart_circle{
+            font-size: xx-large;
+            color: rgba(0, 0, 0, 0.453);
+            cursor: pointer;
+            &:hover{
+                color: rgba(255, 0, 0, 0.682);
+            }
+            
+        }
+    }
+
+    .ajouter{
+        @include frec;
+        button{
+            margin-top: 5px;
+            margin-right: 5px;
+            padding: 6px 16px;
+            font-family: fantasy;
+            color: #fff;
+            border: none;
+            background-color: rgb(82, 1, 82);
+            cursor: pointer;
+        }
+    }
+
+}
+
+@media (max-width: $responsive1){
+    #menuContainer .liste{
+        grid-template-columns:repeat(3 , 1fr);
+    }
+}
+@media (max-width: $responsive2){
+    #menuContainer .liste{
+        grid-template-columns:repeat(2 , 1fr);
+    }
+}
+
+@media (max-width: $responsive4){
+    #menuContainer .liste{
+        grid-template-columns:repeat(1 , 1fr);
+    }
+}

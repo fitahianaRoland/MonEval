@@ -1,0 +1,89 @@
+#formulaire_content {
+  height: 100%;
+  position: relative;
+  margin-top: 10px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+#item_content {
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  font-family: sans-serif;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+#item_content form {
+  display: flex;
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+#item_content .champ {
+  width: 100%;
+  margin-bottom: 10px;
+}
+#item_content .champ p {
+  margin: 1px;
+  font-size: small;
+}
+#item_content .champ span {
+  color: rgb(184, 10, 184);
+  font-size: large;
+}
+#item_content .champ input {
+  padding: 0 0;
+  caret-color: rgb(249, 100, 246);
+  padding-left: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.221);
+  border-radius: 5px;
+  width: 340px;
+  height: 30px;
+}
+#item_content .champ input:focus {
+  outline: none;
+  box-shadow: 0px 0px 1px 2px rgba(159, 30, 181, 0.769);
+}
+#item_content .champ input[type=date] {
+  color: rgba(0, 0, 0, 0.483);
+  font-family: sans-serif;
+}
+#item_content .champ input[type=date]:hover {
+  cursor: pointer;
+}
+#item_content .champ select {
+  width: 350px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgba(0, 0, 0, 0.2156862745);
+  border-radius: 5px;
+  padding-left: 10px;
+}
+#item_content .champ select:focus {
+  outline: none;
+  box-shadow: 0px 0px 1px 2px rgba(159, 30, 181, 0.769);
+}
+#item_content button {
+  margin-top: 10px;
+  width: 350px;
+  height: 50px;
+  border: none;
+  background-color: rgb(106, 0, 167);
+  border-radius: 3px;
+  color: #fff;
+  transition: 0.2s;
+}
+#item_content button:hover {
+  cursor: pointer;
+  background-color: rgb(147, 10, 227);
+}/*# sourceMappingURL=formulaire.css.map */

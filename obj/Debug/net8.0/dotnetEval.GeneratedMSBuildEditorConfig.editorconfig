@@ -1,0 +1,191 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = dotnetEval
+build_property.RootNamespace = dotnetEval
+build_property.ProjectDir = D:\Fianarana\s6\backup\dotnetEval\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\Fianarana\s6\backup\dotnetEval
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Authentification/AuthentificationNotifPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVudGlmaWNhdGlvblxBdXRoZW50aWZpY2F0aW9uTm90aWZQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Categorie/GenererCategoriePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllXEdlbmVyZXJDYXRlZ29yaWVQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Classement/ClassementGeneralePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxDbGFzc2VtZW50R2VuZXJhbGVQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Classement/ClassementParCategoriePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxDbGFzc2VtZW50UGFyQ2F0ZWdvcmllUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Classement/ClassementParCategoriePageById.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxDbGFzc2VtZW50UGFyQ2F0ZWdvcmllUGFnZUJ5SWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Classement/ClassementParCategorieResultPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxDbGFzc2VtZW50UGFyQ2F0ZWdvcmllUmVzdWx0UGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Classement/ClassementParEquipePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxDbGFzc2VtZW50UGFyRXF1aXBlUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Classement/ClassementParEtapeCoureur.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxDbGFzc2VtZW50UGFyRXRhcGVDb3VyZXVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Classement/ClassementParEtapePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxDbGFzc2VtZW50UGFyRXRhcGVQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Classement/ListEtapePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xhc3NlbWVudFxMaXN0RXRhcGVQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Coureur/CoureurListPageAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cmV1clxDb3VyZXVyTGlzdFBhZ2VBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Coureur/CoureurListPageEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ291cmV1clxDb3VyZXVyTGlzdFBhZ2VFcXVpcGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Dashboard/DashboardPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXERhc2hib2FyZFBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/EtapeCoureur/ListEtapeCoureurPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXRhcGVDb3VyZXVyXExpc3RFdGFwZUNvdXJldXJQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Etape/InterfaceEquipPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXRhcGVcSW50ZXJmYWNlRXF1aXBQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Etape/ListEtapePageAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXRhcGVcTGlzdEV0YXBlUGFnZUFkbWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Etape/ListEtapePageEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRXRhcGVcTGlzdEV0YXBlUGFnZUVxdWlwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Graphic/ChartJsPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JhcGhpY1xDaGFydEpzUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Import/ImportDonnesPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wb3J0XEltcG9ydERvbm5lc1BhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Import/ImportEtapePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wb3J0XEltcG9ydEV0YXBlUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Import/ImportPointsPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wb3J0XEltcG9ydFBvaW50c1BhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Import/ImportResultatPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW1wb3J0XEltcG9ydFJlc3VsdGF0UGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Login/LoginPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Login/LoginPageAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5QYWdlQWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Login/LoginPageEquipe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5QYWdlRXF1aXBlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Login/RegisterPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cUmVnaXN0ZXJQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Map/MapPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFwXE1hcFBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Penalite/AddPenalitePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuYWxpdGVcQWRkUGVuYWxpdGVQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Penalite/ListPenalitePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuYWxpdGVcTGlzdFBlbmFsaXRlUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Penalite/test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVuYWxpdGVcdGVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Reinitialiser/ReinitialiserBasePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVpbml0aWFsaXNlclxSZWluaXRpYWxpc2VyQmFzZVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/TempsCoureur/AjoutTempsCoureurPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVtcHNDb3VyZXVyXEFqb3V0VGVtcHNDb3VyZXVyUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Travaux/ListTravauxPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmF1eFxMaXN0VHJhdmF1eFBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Travaux/UpdateTravauxPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHJhdmF1eFxVcGRhdGVUcmF2YXV4UGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/TypeFinition/ListTypeFinitionPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHlwZUZpbml0aW9uXExpc3RUeXBlRmluaXRpb25QYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/TypeFinition/UpdateTypeFinitionPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVHlwZUZpbml0aW9uXFVwZGF0ZVR5cGVGaW5pdGlvblBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Fianarana/s6/backup/dotnetEval/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-uk6uunqb09

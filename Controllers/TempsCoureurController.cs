@@ -17,7 +17,6 @@ namespace dotnetEval.Controllers
     {
 
         private readonly TempsCoureurRepository _tempsCoureurRepository;
-
         private readonly ExeptionMessage _exeptionMessage;
         public TempsCoureur(TempsCoureurRepository tempsCoureurRepository, ExeptionMessage exeptionMessage)
         {
